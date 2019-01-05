@@ -238,7 +238,7 @@ workflow JointGenotyping {
     }
   }
 
-  if (nuFinalGatherVcf.output_vcfm_gvcfs <= 10000){
+  if (num_gvcfs <= 10000){
     call SNPsVariantRecalibrator as SNPsVariantRecalibratorClassic {
       input:
           sites_only_variant_filtered_vcf = SitesOnlyGatherVcf.output_vcf,
